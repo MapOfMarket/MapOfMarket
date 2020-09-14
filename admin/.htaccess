@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "Admin panel"
+AuthUserFile /home/artemiy/MapOfStore/admin/.htpasswd
+<Limit GET POST>
+Require valid-user
+</Limit>
+
