@@ -2,14 +2,15 @@
 require 'classes/User.php';
 
 interface UserService{
-    public function addNewUser($id, $name, $items, $boxes): void;
     
-    public function deleteUser($id): void;
+    function addNewUser($id, $name, $items, $boxes): void;
     
-    public function updateUser($id, $name, $items, $boxes): User;
+    function deleteUser($id): void;
     
-    public function getUserById($id): User;
+    function updateUser($id, $name, $items, $boxes): User;
     
-    public function findAll(): string;
+    function getUserById($id): User;
+    
+    function findAll(): string;
 }
 

@@ -1,6 +1,6 @@
 <?php
 require 'classes/User.php';
-require 'Services/ItemService.php';
+require 'services/ItemService.php';
 require 'conf/configuration.php';
 
 class UserServiceImpl implements UserService{
@@ -15,6 +15,10 @@ class UserServiceImpl implements UserService{
             http_response_code(500);
         exit('Database query error');
     
+        }
+        
+        while($row = mysqli_fetch_array($result)){
+            
         }
      }
 
@@ -55,6 +59,8 @@ class UserServiceImpl implements UserService{
          $link = getDbConnection();
          
          $result = $link->execute(sprintf("SELECT * FROM users"));
+         
+         echo $result;
          
          if (!$result){
             http_response_code(500);
