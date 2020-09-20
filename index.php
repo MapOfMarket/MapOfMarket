@@ -8,9 +8,8 @@
     </head>
     <body>
         <?php
-        require 'classes/User.php';
-    
+
         ?>
-        <a href="/admin/index.php">Панель администрирования</a>
+        <a href="admin/admin.php">Панель администрирования</a>
     </body>
 </html>

@@ -5,7 +5,7 @@ function getDbConnection(){
     $user = 'artemiy';
     $password = 'Recognize13_';
     
-    $link = mysqli_connect($host, $password, $user, $database);
+    $link = mysqli_connect($host, $user, $password, $database);
     if(!$link)
     {
         http_response_code(505);
