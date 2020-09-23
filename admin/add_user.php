@@ -7,7 +7,7 @@
     </title>
 </head>
 <body>
-    <form action="/services/Impl/StoreServiceImpl.php" method="post">
+    <form action="/conf/StoreServiceImpl.php" method="post">
         <p>Name: <input type="text" name="name"/></p>
         <p>Boxes: <input type="text" name="boxes"/></p>
         <p><input type="submit" name="submit" value="Submit"/></p>

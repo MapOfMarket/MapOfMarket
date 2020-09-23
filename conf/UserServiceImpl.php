@@ -1,6 +1,6 @@
 <?php
-require '../StoreService.php';
-require '../../conf/configuration.php';
+require 'configuration.php';
+require '../services/UserService.php';
 
 class UserServiceImpl implements UserService{
     
@@ -77,7 +77,6 @@ class UserServiceImpl implements UserService{
                     <td><?php echo $row['id']?></td>
                     <td><?php echo $row['name']?></td>
                     <td><?php echo $row['boxes']?></td>
-                    <td><?php echo $row['items']?></td>
                 </tr>
             </table>
             <?php
