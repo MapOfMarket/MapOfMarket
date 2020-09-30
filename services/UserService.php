@@ -1,7 +1,7 @@
 <?php
 interface UserService{
     
-    function addNewUser($name, $boxes): void;
+    function addNewUser($id, $name, $boxes): void;
     
     function deleteUser($id): void;
     

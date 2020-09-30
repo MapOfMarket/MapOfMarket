@@ -4,13 +4,10 @@ require '../services/UserService.php';
 
 class UserServiceImpl implements UserService{
     
-     public function addNewUser($name, $boxes): void {
+     public function addNewUser($id, $name, $boxes): void {
          $link = getDbConnection();
 
-         $name = trim((string)$_POST["name"]);
-         $boxes = trim((string)$_POST["boxes"]);
-
-         $result = $link->query("INSERT INTO users(id, name, boxes) VALUES $name, $boxes");
+         $result = $link->query("INSERT INTO users(id, name, boxes) VALUES ('$id', '$name', '$boxes')");
 
          if (!$result){
              http_response_code(500);
@@ -21,10 +18,8 @@ class UserServiceImpl implements UserService{
 
      function deleteUser($id): void {
          $link = getDbConnection();
-
-         $id = trim((int)$_POST["idOfUser"]);
          
-         $result = $link->query("DELETE FROM users u WHERE u.id={'$id'}");
+         $result = $link->query("DELETE FROM users u WHERE u.id=('$id')");
          
          if (!$result){
             http_response_code(500);
@@ -36,7 +31,7 @@ class UserServiceImpl implements UserService{
      function getUserById($id): void {
          $link = getDbConnection();
          
-         $result = $link->query("SELECT * FROM users WHERE id={$id}");
+         $result = $link->query("SELECT FROM users u WHERE u.id=('$id')");
          
          if (!$result){
             http_response_code(500);
@@ -46,18 +41,15 @@ class UserServiceImpl implements UserService{
 
      function updateUser($id, $name, $boxes): void{
          $link = getDbConnection();
-
-         $name = trim((string)$_POST["name"]);
-         $boxes = trim((string)$_POST["boxes"]);
          
-         $result = $link->query("UPDATE users SET name={'$name'}, boxes={'$boxes'} WHERE id={'$id'}");
+         $result = $link->query("UPDATE users u SET name=('$name'), boxes=('$boxes') WHERE u.id=('$id')");
          
          if (!$result) {
              http_response_code(500);
              exit('Database query error');
          }
 
-         echo "User with id".$_POST['id']."updated";
+         echo "User with id = ".$id." updated";
      }
      
      function findAll(): void {

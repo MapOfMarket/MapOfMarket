@@ -2,50 +2,54 @@
 require '../services/StoreService.php';
 require 'configuration.php';
 
-class StoreServiceImpl implements StoreService{
+class CityServiceImpl implements CityService{
 
-    function addNewStore($id, $name, $lat, $lon): void
+
+    function addNewCity($id, $name): void
     {
         $link = getDbConnection();
 
-        $result = $link->query("INSERT INTO stores(id, name, lat, lon) VALUES ('$id', '$name', '$lat', '$lon')");
+        $result = $link->query("INSERT INTO cities(id, name) VALUES ('$id', '$name')");
 
         if (!$result){
             http_response_code(500);
             exit('Database query error');
         }
-        echo "User added";
+        echo "City added";
     }
 
-    function deleteStore($id): void
+    function deleteCity($id): void
     {
         $link = getDbConnection();
 
-        $result = $link->query("DELETE FROM stores WHERE id=('$id')");
+        $result = $link->query("DELETE FROM cities c WHERE c.id=('$id')");
 
         if (!$result){
             http_response_code(500);
             exit('Database query error');
         }
+        echo "City deleted";
     }
 
-    function updateStore($id, $name, $lat, $lon): void
+    function updateCity($id, $name): void
     {
         $link = getDbConnection();
 
-        $result = $link->query("UPDATE stores u SET name=('$name'), lat=('$lat'), lon = ('$lon') WHERE u.id=('$id')");
+        $result = $link->query("UPDATE cities c SET id =('$id'), name=('$name') WHERE c.id=('$id')");
 
-        if (!$result){
+        if (!$result) {
             http_response_code(500);
             exit('Database query error');
         }
+
+        echo "User with id = ".$id." updated";
     }
 
-    function getStoreById($id): void
+    function getCityById($id): void
     {
         $link = getDbConnection();
 
-        $result = $link->query("SELECT FROM stores s WHERE s.id=('$id')");
+        $result = $link->query("SELECT * FROM cities WHERE id=('$id')");
 
         if (!$result){
             http_response_code(500);
@@ -57,7 +61,7 @@ class StoreServiceImpl implements StoreService{
     {
         $link = getDbConnection();
 
-        $result = $link->query("SELECT * FROM stores");
+        $result = $link->query("SELECT * FROM cities");
 
         if (!$result){
             http_response_code(500);
@@ -70,13 +74,9 @@ class StoreServiceImpl implements StoreService{
                 <tr>
                     <td><?php echo $row['id']?></td>
                     <td><?php echo $row['name']?></td>
-                    <td><?php echo $row['lat']?></td>
-                    <td><?php echo $row['lon']?></td>
                 </tr>
             </table>
             <?php
         }
     }
-
-
 }

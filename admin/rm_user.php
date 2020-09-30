@@ -7,8 +7,8 @@
     </title>
 </head>
 <body>
-    <form action="/conf/StoreServiceImpl.php" method="post">
-        <p>Id of user, who will be deleted: <input type="text" name="idOfUser"/></p>
+    <form action="submit_remove.php" method="post">
+        <p>Id of user, who will be deleted: <input type="number" name="id"/></p>
         <p><input type="submit" name="submit" value="Submit"/></p>
     </form>
 </body>
