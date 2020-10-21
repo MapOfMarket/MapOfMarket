@@ -1,5 +1,5 @@
 <?php
-require '../services/StoreService.php';
+require 'StoreService.php';
 require 'configuration.php';
 
 class StoreServiceImpl implements StoreService{

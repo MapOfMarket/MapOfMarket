@@ -10,4 +10,6 @@ interface CityService{
     function getCityById($id): void;
 
     function findAll(): void;
+
+    function findAllIndex(): void;
 }

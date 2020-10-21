@@ -1,13 +1,13 @@
 <?php
 require 'configuration.php';
-require '../services/UserService.php';
+require 'UserService.php';
 
 class UserServiceImpl implements UserService{
     
-     public function addNewUser($id, $name, $boxes): void {
+     public function addNewUser($id, $name, $boxes, $role): void {
          $link = getDbConnection();
 
-         $result = $link->query("INSERT INTO users(id, name, boxes) VALUES ('$id', '$name', '$boxes')");
+         $result = $link->query("INSERT INTO users(id, name, boxes, role) VALUES ('$id', '$name', '$boxes', '$role')");
 
          if (!$result){
              http_response_code(500);
@@ -39,10 +39,10 @@ class UserServiceImpl implements UserService{
         }
      }
 
-     function updateUser($id, $name, $boxes): void{
+     function updateUser($id, $name, $boxes, $role): void{
          $link = getDbConnection();
          
-         $result = $link->query("UPDATE users u SET name=('$name'), boxes=('$boxes') WHERE u.id=('$id')");
+         $result = $link->query("UPDATE users u SET name=('$name'), boxes=('$boxes'), role=('$role') WHERE u.id=('$id')");
          
          if (!$result) {
              http_response_code(500);

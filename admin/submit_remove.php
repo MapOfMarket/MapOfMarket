@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    require "../conf/UserServiceImpl.php";
+    ?>
+    ?>
     <meta charset="UTF-8">
     <title>
         Delete a user
@@ -8,8 +12,6 @@
 </head>
 <body>
     <?php
-    require "../conf/UserServiceImpl.php";
-
     $id = (int)$_POST['id'];
 
     $userServiceImpl = new UserServiceImpl();

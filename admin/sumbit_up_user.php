@@ -13,10 +13,11 @@
     $id = (int)$_POST['id'];
     $name = trim((string)$_POST['name']);
     $boxes = trim((string)$_POST['boxes']);
+    $role = trim((string)$_POST['role']);
 
     $userServiceImpl = new UserServiceImpl();
 
-    $userServiceImpl->updateUser($id, $name, $boxes);
+    $userServiceImpl->updateUser($id, $name, $boxes, $role);
     ?>
 <p><a href="admin.php"></a></p>
 </body>

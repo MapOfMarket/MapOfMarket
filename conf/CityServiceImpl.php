@@ -1,9 +1,8 @@
 <?php
-require '../services/StoreService.php';
-require 'configuration.php';
+require('CityService.php');
+require ('configuration.php');
 
 class CityServiceImpl implements CityService{
-
 
     function addNewCity($id, $name): void
     {
@@ -78,5 +77,27 @@ class CityServiceImpl implements CityService{
             </table>
             <?php
         }
+    }
+
+    function findAllIndex(): void
+    {
+        $link = getDbConnection();
+
+        $result = $link->query("SELECT * FROM cities");
+
+        if (!$result){
+            http_response_code(500);
+            exit('Database query error');
+        }
+                echo '<div>';
+                echo '<select>';
+                while($row = mysqli_fetch_array($result)){
+                    ?>
+                    <option><?php echo $row['name']?></option>
+                    <?php
+                }
+                echo '</select>';
+                echo '</div>';
+
     }
 }
