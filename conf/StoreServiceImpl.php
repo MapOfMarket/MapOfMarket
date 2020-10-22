@@ -1,8 +1,9 @@
 <?php
-require 'StoreService.php';
-require 'configuration.php';
+require ('StoreService.php');
+require_once ('configuration.php');
 
-class StoreServiceImpl implements StoreService{
+class StoreServiceImpl implements StoreService
+{
 
     function addNewStore($id, $name, $lat, $lon): void
     {
@@ -76,6 +77,25 @@ class StoreServiceImpl implements StoreService{
             </table>
             <?php
         }
+    }
+
+    function findAllIndex($link): void
+    {
+        $result = $link->query("SELECT * FROM stores");
+
+        if (!$result){
+            http_response_code(500);
+            exit('Database query error');
+        }
+        echo '<div>';
+        echo '<select>';
+        while($row = mysqli_fetch_array($result)){
+            ?>
+            <option><?php echo $row['name']?></option>
+            <?php
+        }
+        echo '</select>';
+        echo '</div>';
     }
 
 

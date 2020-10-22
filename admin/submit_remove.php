@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php
-    require "../conf/UserServiceImpl.php";
+    require_once("../conf/UserServiceImpl.php");
     ?>
     ?>
     <meta charset="UTF-8">
@@ -18,6 +18,6 @@
 
     $userServiceImpl->deleteUser($id);
     ?>
-<p><a href="admin.php"></a></p>
+<p><a href="admin.php">Вернутся на админ-панель</a></p>
 </body>
 </html>

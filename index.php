@@ -3,7 +3,9 @@
     <head>
         <style></style>
         <?php
-        require('conf/CityServiceImpl.php');
+        require_once ('conf/configuration.php');
+        require_once ('conf/StoreServiceImpl.php');
+        require_once('conf/CityServiceImpl.php');
         ?>
         <meta charset="UTF-8">
         <title>
@@ -13,10 +15,17 @@
     <body>
     <p><strong>Выберите город</strong></p>
     <?php
+    $link = getDbConnection();
     $cityService = new CityServiceImpl();
+    $storeService = new StoreServiceImpl();
 
-    $cityService->findAllIndex();
+    $cityService->findAllIndex($link);
     ?>
-    <a href="admin/admin.php">Панель управления</a>
+    <div>
+        <?php
+        $storeService->findAllIndex($link);
+        ?>
+    </div>
+    <a href="admin/admin.php">Залогинтесь</a>
     </body>
 </html>

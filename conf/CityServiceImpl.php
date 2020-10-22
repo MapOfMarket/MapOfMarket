@@ -1,8 +1,9 @@
 <?php
-require('CityService.php');
-require ('configuration.php');
+require_once ('CityService.php');
+require_once ('configuration.php');
 
-class CityServiceImpl implements CityService{
+class CityServiceImpl implements CityService
+{
 
     function addNewCity($id, $name): void
     {
@@ -41,7 +42,7 @@ class CityServiceImpl implements CityService{
             exit('Database query error');
         }
 
-        echo "User with id = ".$id." updated";
+        echo "City with id = ".$id." updated";
     }
 
     function getCityById($id): void
@@ -79,7 +80,7 @@ class CityServiceImpl implements CityService{
         }
     }
 
-    function findAllIndex(): void
+    function findAllIndex($link): void
     {
         $link = getDbConnection();
 
@@ -89,15 +90,14 @@ class CityServiceImpl implements CityService{
             http_response_code(500);
             exit('Database query error');
         }
-                echo '<div>';
-                echo '<select>';
-                while($row = mysqli_fetch_array($result)){
-                    ?>
-                    <option><?php echo $row['name']?></option>
-                    <?php
-                }
-                echo '</select>';
-                echo '</div>';
-
+        echo '<div>';
+        echo '<select>';
+        while($row = mysqli_fetch_array($result)){
+            ?>
+            <option><?php echo $row['name']?></option>
+            <?php
+        }
+        echo '</select>';
+        echo '</div>';
     }
 }

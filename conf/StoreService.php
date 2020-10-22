@@ -1,6 +1,6 @@
 <?php
-interface StoreService{
-
+interface StoreService
+{
     function addNewStore($id, $name, $lat, $lon): void;
 
     function deleteStore($id): void;
@@ -10,4 +10,6 @@ interface StoreService{
     function getStoreById($id): void;
 
     function findAll(): void;
+
+    function findAllIndex($link): void;
 }

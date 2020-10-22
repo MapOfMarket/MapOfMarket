@@ -11,7 +11,6 @@
         <p>Id: <input type="number" name="id"></p>
         <p>Name: <input type="text" name="name"/></p>
         <p>Boxes: <input type="text" name="boxes"/></p>
-        <p>Role: <input type="text" name="role"/></p>
         <p><input type="submit" name="submit" value="Submit"/></p>
     </form>
 </body>

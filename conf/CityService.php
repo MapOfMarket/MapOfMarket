@@ -1,6 +1,6 @@
 <?php
-interface CityService{
-
+interface CityService
+{
     function addNewCity($id, $name): void;
 
     function deleteCity($id): void;
@@ -11,5 +11,5 @@ interface CityService{
 
     function findAll(): void;
 
-    function findAllIndex(): void;
+    function findAllIndex($link): void;
 }

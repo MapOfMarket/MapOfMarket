@@ -2,7 +2,8 @@
 require 'configuration.php';
 require 'UserService.php';
 
-class UserServiceImpl implements UserService{
+class UserServiceImpl implements UserService
+{
     
      public function addNewUser($id, $name, $boxes, $role): void {
          $link = getDbConnection();

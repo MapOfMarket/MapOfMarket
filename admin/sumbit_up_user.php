@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    require_once("../conf/UserServiceImpl.php");
+    ?>
     <meta charset="UTF-8">
     <title>
         Update a user
@@ -8,8 +11,6 @@
 </head>
 <body>
     <?php
-    require "../conf/UserServiceImpl.php";
-
     $id = (int)$_POST['id'];
     $name = trim((string)$_POST['name']);
     $boxes = trim((string)$_POST['boxes']);
@@ -19,6 +20,6 @@
 
     $userServiceImpl->updateUser($id, $name, $boxes, $role);
     ?>
-<p><a href="admin.php"></a></p>
+<p><a href="admin.php">Вернутся на админ-панель</a></p>
 </body>
 </html>

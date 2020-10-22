@@ -1,9 +1,9 @@
 <?php
-    require('../conf/configuration.php');
-    require('func/functions.php');
+    require_once('../conf/configuration.php');
+    require_once('func/functions.php');
     $link = getDbConnection();
 
-    $correct = registrationCorrect();
+    $correct = registrationCorrect($link);
     if($correct){
 
         $id = htmlspecialchars($_POST['id']);
@@ -13,15 +13,13 @@
         {
             setcookie("login", $login);
             setcookie("password", $password);
-            $res = mysqli_query($link, "SELECT * FROM admins WHERE login=".$login);
+            $res = mysqli_query($link, "SELECT * FROM admins WHERE login='$login'");
             $row = mysqli_fetch_assoc($res);
-            $_SESSION['id'] = row['id'];
+            $_SESSION['id'] = $row['id'];
             $regged = true;
         }
 
     }
-
-
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,8 +1,5 @@
 <?php
-require ('../../conf/configuration.php');
-function registrationCorrect(){
-    $link = getDbConnection();
-
+function registrationCorrect($link){
     if($_POST['login'] == '') return false;
     if($_POST['password'] == '') return false;
     if (!preg_match('/^([a-zA-Z0-9])(\w|-|_)+([a-z0-9])$/is', $_POST['login'])) return false;

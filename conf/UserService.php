@@ -1,5 +1,6 @@
 <?php
-interface UserService{
+interface UserService
+{
     
     function addNewUser($id, $name, $boxes, $role): void;
     
