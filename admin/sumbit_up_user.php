@@ -14,11 +14,13 @@
     $id = (int)$_POST['id'];
     $name = trim((string)$_POST['name']);
     $boxes = trim((string)$_POST['boxes']);
-    $role = trim((string)$_POST['role']);
+    $login = htmlspecialchars($_POST['login']);
+    $password = htmlspecialchars($_POST['password']);
+    $role = trim("user");
 
     $userServiceImpl = new UserServiceImpl();
 
-    $userServiceImpl->updateUser($id, $name, $boxes, $role);
+    $userServiceImpl->updateUser($id, $name, $boxes, $login, $password, $role);
     ?>
 <p><a href="admin.php">Вернутся на админ-панель</a></p>
 </body>

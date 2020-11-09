@@ -11,16 +11,16 @@
     </title>
 </head>
 <body>
-<?php
-$id = (int)$_POST['id'];
-$name = (string)$_POST['name'];
-$lon = (int)$_POST['lon'];
-$lat = (int)$_POST['lat'];
+    <?php
+    $id = (int)$_POST['id'];
+    $name = trim((string)$_POST['name']);
+    $lon = (int)$_POST['lon'];
+    $lat = (int)$_POST['lat'];
 
-$storeService = new StoreServiceImpl();
+    $storeService = new StoreServiceImpl();
 
-$storeService->updateStore($id, $name, $lat, $lon);
-?>
+    $storeService->updateStore($id, $name, $lat, $lon);
+    ?>
 <p><a href="admin.php">Вернутся на админ-панель</a></p>
 </body>
 </html>

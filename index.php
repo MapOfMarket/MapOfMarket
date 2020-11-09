@@ -5,7 +5,7 @@
         <?php
         require_once ('conf/configuration.php');
         require_once ('conf/StoreServiceImpl.php');
-        require_once('conf/CityServiceImpl.php');
+        require_once ('conf/CityServiceImpl.php');
         ?>
         <meta charset="UTF-8">
         <title>
@@ -26,6 +26,6 @@
         $storeService->findAllIndex($link);
         ?>
     </div>
-    <a href="admin/admin.php">Залогинтесь</a>
+    <a href="login.php">Залогинтесь</a>
     </body>
 </html>

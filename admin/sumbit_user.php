@@ -13,13 +13,15 @@
     <?php
     $id = (int)$_POST['id'];
     $name = trim((string)$_POST['name']);
+    $login = htmlspecialchars($_POST['login']);
+    $password = htmlspecialchars($_POST['password']);
     $boxes = trim((string)$_POST['boxes']);
     $role = trim("user");
 
     $userServiceImpl = new UserServiceImpl();
 
-    $userServiceImpl->addNewUser($id, $name, $boxes, $role);
+    $userServiceImpl->addNewUser($id, $name, $login, $password, $boxes, $role);
     ?>
-<p><a href="admin.php">Вернутся на админ-панель</a></p>
+<p><a href="admin.php">Back to admin-panel</a></p>
 </body>
 </html>

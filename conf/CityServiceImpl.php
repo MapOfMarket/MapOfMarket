@@ -1,7 +1,5 @@
 <?php
 require_once ('CityService.php');
-require_once ('configuration.php');
-
 class CityServiceImpl implements CityService
 {
 

@@ -1,9 +1,4 @@
 <?php
-
-
-namespace conf;
-
-
 class AdminServiceImpl implements AdminService
 {
     function addNewAdmin($id, $login, $password): void
