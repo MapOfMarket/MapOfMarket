@@ -1,0 +1,110 @@
+@import "reset.css";
+
+.hide{
+	display: none;
+}
+
+.show{
+	display: block;
+}
+
+.admin_wrapper {
+	display: flex;
+	font-family: Roboto, Condensed;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+	letter-spacing: 0em;
+	text-align: left;
+}
+
+.admin_menu__box {
+	padding-top: 38px;
+	padding-left: 33px;
+	min-width: 215px;
+	background-color: #cbedf5;
+	height: 100vh;
+}
+
+.admin_menu {
+	color: black;
+}
+
+.admin_menu ul { 
+	margin-bottom: 20px;
+}
+
+.admin_menu ul {
+	margin-left:10px; 
+	margin-bottom: 20px;
+}
+
+.admin_menu__sub {
+}
+
+.admin_menu__sub-sub {
+}
+
+.admin_main {
+}
+
+.admin_main__button {
+	margin-top: 35px;
+	margin-left: 45px;
+	font-family: Roboto, Condensed;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #197287;
+	padding: 8px 25px 12px;
+	background-color: #D4F0F7;
+}
+
+.admin_main__table {
+	margin: 110px 25px 22px 25px;
+}
+
+.admin_main__table-header {
+	background-color: #cbedf5;
+	display: flex;
+	padding: 8px 0px;
+	margin-bottom: 10px;
+}
+
+.table_header__element {
+	padding: 0px 15px;
+	border-right: 1px solid #197287;
+}
+
+.table_header__element:last-child{
+	border-right:0px;
+}
+
+.admin_main__table-body {
+	display: flex;
+	background-color: #E5F6FA;
+	padding: 15px 10px;
+}
+
+.body_row {
+	border-radius:10px ;
+	display: flex;
+	
+	padding: 8px 0px;
+	margin-bottom: 8px;
+	background-color: #cbedf5;
+}
+
+.body_row__element:last-child{
+	border-right:0px;
+	flex-grow: 2;
+}
+
+.body_row__element {
+	padding: 15px;
+	border-right: 1px solid #197287;
+}
