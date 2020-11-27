@@ -3,9 +3,10 @@ class AdminServiceImpl implements AdminService
 {
     function addNewAdmin($id, $login, $password): void
     {
+        $role = 'admin';
         $link = getDbConnection();
 
-        $result = $link->query("INSERT INTO admins(id, login, password) VALUES ('$id', '$login', '$password')");
+        $result = $link->query("INSERT INTO admins(id, login, password, role) VALUES ('$id', '$login', '$password', '$role')");
 
         if (!$result){
             http_response_code(500);
