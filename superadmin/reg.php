@@ -6,8 +6,8 @@
 <h2>Регистрация</h2>
 <form action="save_admin.php" method="post">
     <p>
-        <label>Id:<br></label>
-        <input name="id" type="number" size="15" maxlength="15">
+        <label>IdOfStore:<br></label>
+        <input name="idOfStore" type="number" size="15" maxlength="15">
     </p>
     <p>
         <label>Ваш логин:<br></label>

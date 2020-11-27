@@ -3,6 +3,7 @@
 <head>
     <?php
     require_once("../conf/StoreServiceImpl.php");
+    require_once("../conf/configuration.php");
     ?>
     ?>
     <meta charset="UTF-8">
@@ -12,6 +13,9 @@
 </head>
 <body>
     <?php
+    $link = getDbConnection();
+
+    $query = mysqli_query($link, "SELECT idOfStore FROM admin_store WHERE IdOfAdmin=('')")
     $id = (int)$_POST['id'];
     $name = trim((string)$_POST['name']);
     $lon = (int)$_POST['lon'];
