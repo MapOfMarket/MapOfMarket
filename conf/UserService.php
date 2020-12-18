@@ -3,6 +3,8 @@ interface UserService
 {
     
     function addNewUser($id, $name, $login, $password, $boxes, $role): void;
+
+    function addNewUserForAdmins($id, $name, $login, $password, $boxes, $role, $id_of_store): void;
     
     function deleteUser($id): void;
     

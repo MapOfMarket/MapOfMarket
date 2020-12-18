@@ -8,7 +8,7 @@
 </head>
 <body>
     <form action="sumbit_update_user.php" method="post">
-        <p>Id: <input type="number" name="id"></p>
+        <p>Id of user you want to be updated: <input type="number" name="id"></p>
         <p>Name: <input type="text" name="name"/></p>
         <p>Login: <input type="text" name="login"></p>
         <p>Password: <input type="password" name="password"></p>

@@ -27,7 +27,7 @@ if(!empty($login) && !empty($password)) {
     elseif (empty($row) && empty($row1) && !empty($row2)){
         header('Location: php/superadmin/superadmin.php');
     }
-    else{
-        exit("It can be error or your data is used");
+    elseif(!(empty($row) && empty($row1)) or !(empty($row2) && empty($row)) or !(empty($row2) && empty($row1))) {
+        exit("Your data is used");
     }
 }

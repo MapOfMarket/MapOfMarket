@@ -13,6 +13,7 @@
         <p>Login: <input type="text" name="login"></p>
         <p>Password: <input type="password" name="password"></p>
         <p>Boxes: <input type="text" name="boxes"/></p>
+        <p>Id of store: <input type="number" name="id_of_store"></p>
         <p><input type="submit" name="submit" value="Submit"/></p>
     </form>
 </body>

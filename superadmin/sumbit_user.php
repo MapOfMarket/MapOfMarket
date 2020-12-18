@@ -17,6 +17,7 @@
     $password = htmlspecialchars($_POST['password']);
     $boxes = trim((string)$_POST['boxes']);
     $role = trim("user");
+    $id_of_store = (int)$_POST['id_of_store'];
 
     $userServiceImpl = new UserServiceImpl();
 

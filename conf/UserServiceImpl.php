@@ -4,7 +4,7 @@ require_once ('configuration.php');
 class UserServiceImpl implements UserService
 {
     
-     public function addNewUser($id, $name, $login, $password, $boxes, $role): void {
+     function addNewUser($id, $name, $login, $password, $boxes, $role): void {
          $link = getDbConnection();
 
          $result = $link->query("INSERT INTO users(id, name, login, password, boxes, role) VALUES ('$id', '$name', '$login', '$password', '$boxes', '$role')");
@@ -16,7 +16,25 @@ class UserServiceImpl implements UserService
          echo "User added";
      }
 
-     function deleteUser($id): void {
+     function addNewUserForAdmins($id, $name, $login, $password, $boxes, $role, $id_of_store): void{
+         $link = getDbConnection();
+
+         $result = $link->query("INSERT INTO users(id, name, login, password, boxes, role) VALUES ('$id', '$name', '$login', '$password', '$boxes', '$role')");
+         $result1 = $link->query("SELECT FROM stores st WHERE st.id=('$id_of_store')");
+         $result2 = $link->query("INSERT INTO user_store(idofuser, idofstore) VALUES ('$id', '$id_of_store')");
+
+         if(!$result1){
+             http_response_code(500);
+             exit('Id of store does not exist');
+         }
+         elseif (!$result && !$result2){
+             http_response_code(500);
+             exit('Database query error');
+         }
+         echo "User added";
+     }
+
+    function deleteUser($id): void {
          $link = getDbConnection();
          
          $result = $link->query("DELETE FROM users u WHERE u.id=('$id')");
@@ -73,7 +91,6 @@ class UserServiceImpl implements UserService
             </table>
             <?php
         }
-
      } 
 }
 ?>
