@@ -1,5 +1,7 @@
 @import "reset.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 .hide{
 	display: none;
 }
@@ -107,4 +109,50 @@
 .body_row__element {
 	padding: 15px;
 	border-right: 1px solid #197287;
+}
+
+.header_content {
+}
+.header_content__search {
+}
+.header_content__menu {
+	background-color:#FAFAFA;
+	max-width: 80%;
+}
+.header_content__menu-title {
+	padding-bottom: 45px;
+}
+
+.header_content__menu{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	color:#000000;
+	padding-left: 40px;
+}
+
+.header_content__menu button{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	color:red;
+}
+
+
+
+
+.header_content__menu-item{
+	padding-bottom: 35px;
+}
+.header_content__menu-button {
+}
+.markets {
+}
+.markets_show {
+}
+.market_name {
+}
+.markets_list {
+}
+.markets_list__item {
 }
